@@ -1,0 +1,18 @@
+class Solution {
+    public int findGCD(int[] nums) {
+        
+        Arrays.sort(nums);
+        int a=nums[0];
+        int b=nums[nums.length-1];
+        int product=a*b;
+        
+        int ans = (a > b) ? a : b;
+
+        while (true) {
+            if (ans % a == 0 && ans % b == 0)
+                break;
+            ans++;
+        }
+        return product/ans;
+    }
+}
